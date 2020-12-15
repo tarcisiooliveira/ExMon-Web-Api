@@ -7,9 +7,9 @@ defmodule ExMonWeb.Router do
 
   scope "/api", ExMonWeb do
     pipe_through :api
-    # resources "/trainers", TrainersController, only: [:create, :show, :delete, :update]
-    post "/trainers", TrainersController, :create
-    post "/trainers/signin", TrainersController, :sign_in
+    resources "/trainers", TrainersController, only: [:create, :show, :delete, :update]
+    # post "/trainers", TrainersController, :create
+    # post "/trainers/signin", TrainersController, :sign_in
     # get "/pokemons/:name", PokemonsController, :show
   end
 
