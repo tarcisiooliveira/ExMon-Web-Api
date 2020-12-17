@@ -1,6 +1,6 @@
-defmodule ExMon.Trainer.Delete do
+defmodule ExMon.Trainer.Pokemon.Delete do
   alias Ecto.UUID
-  alias ExMon.{Repo, Trainer}
+  alias ExMon.{Repo, Trainer.Pokemon}
 
   def call(id) do
     case UUID.cast(id) do
@@ -11,10 +11,10 @@ defmodule ExMon.Trainer.Delete do
 
   defp delete(uuid) do
     case fetch_trainer(uuid) do
-      nil -> {:error, "Invalid ID Not Found"}
+      nil -> {:error, "Pokemon Not Found"}
       trainer -> Repo.delete(trainer)
     end
   end
 
-  defp fetch_trainer(uuid), do: Repo.get(Trainer, uuid)
+  defp fetch_trainer(uuid), do: Repo.get(Pokemon, uuid)
 end

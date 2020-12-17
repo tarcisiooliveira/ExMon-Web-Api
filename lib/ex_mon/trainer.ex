@@ -1,13 +1,14 @@
 defmodule ExMon.Trainer do
   use Ecto.Schema
   import Ecto.Changeset
-
+  alias ExMon.Trainer.Pokemon
   @primary_key {:id, Ecto.UUID, autogenerate: true}
 
   schema "trainers" do
     field :name, :string
     field :password_hash, :string
     field :password, :string, virtual: true
+    has_many(:pokemon, Pokemon)
     timestamps()
   end
 
@@ -27,8 +28,13 @@ defmodule ExMon.Trainer do
   end
 
   @required_params [:name, :password]
-  def changeset(params) do
-    %__MODULE__{}
+  # Usado pelo create
+  def changeset(params), do: create_or_change_changeset(%__MODULE__{}, params)
+  # usado pelo update
+  def changeset(trainer, params), do: create_or_change_changeset(trainer, params)
+
+  defp create_or_change_changeset(module_or_trainer, params) do
+    module_or_trainer
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     |> validate_length(:password, min: 6)
