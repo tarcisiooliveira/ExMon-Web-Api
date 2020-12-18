@@ -6,7 +6,6 @@ defmodule ExMonWeb.TrainersController do
   def create(conn, params) do
     params
     |> ExMon.create_trainer()
-    |> IO.inspect()
     |> handle_response(conn, "create.json", :created)
   end
 
@@ -24,7 +23,6 @@ defmodule ExMonWeb.TrainersController do
   def update(conn, params) do
     params
     |> ExMon.update_trainer()
-    |> IO.inspect()
     |> handle_response(conn, "update.json", :ok)
   end
   defp handle_delete({:ok, _message}, conn) do

@@ -1,6 +1,5 @@
 defmodule ExMonWeb.TrainersView do
   use ExMonWeb, :view
-  alias ExMon.Trainer.Pokemon
 
   alias ExMon.Trainer
 
@@ -16,13 +15,18 @@ defmodule ExMonWeb.TrainersView do
   end
 
   def render("view.json", %{
-        trainer: %Trainer{id: id, name: name, inserted_at: inserted_at, pokemon: pokemon}
+        trainer: %Trainer{
+          id: id,
+          name: name,
+          inserted_at: inserted_at,
+          pokemon: pokemon
+        }
       }) do
     %{
       id: id,
       name: name,
       inserted_at: inserted_at,
-      pokemon: %{pokemon: pokemon}
+      pokemon: parse_type(pokemon)
     }
   end
 
@@ -39,4 +43,6 @@ defmodule ExMonWeb.TrainersView do
       }
     }
   end
+
+  defp parse_type(pokemons), do: Enum.map(pokemons, fn item -> item.name end)
 end
