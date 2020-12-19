@@ -1,6 +1,11 @@
 defmodule ExMon.PokeApi.Client do
   use Tesla
 
+  @doc """
+    Modulo que irá fazer a conexão com API externa
+    Tesla é o módulo que faz a coneção
+  """
+
   plug Tesla.Middleware.BaseUrl, "https://pokeapi.co/api/v2"
   plug Tesla.Middleware.JSON
 
