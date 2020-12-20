@@ -1,4 +1,8 @@
-# ExMon
+# ExMon Web Api
+
+Uma API de estudo da linguagem Elixir e do Framework Phoenix
+Esse estudo é baseado no [Curso Elixir e Phoenix do zero](https://www.udemy.com/course/elixir-e-phoenix-do-zero) de [Rafael Camarda](https://github.com/RafaelCamarda)
+
 
 To start your Phoenix server:
 
