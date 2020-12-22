@@ -22,10 +22,7 @@ defmodule ExMonWeb.ErrorView do
     %{message: message}
   end
 
-  def render("401.json", %{message: message}=params) do
-    IO.inspect(message)
-    IO.puts("=============================")
-    IO.inspect(params)
+  def render("401.json", %{message: message}) do
     %{message: message}
   end
 

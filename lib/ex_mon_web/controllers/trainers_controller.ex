@@ -13,8 +13,6 @@ defmodule ExMonWeb.TrainersController do
   end
 
   def sign_in(conn, params) do
-    IO.puts("==============================+_+_+_+_+_")
-
     with {:ok, token} <- Guardian.authenticate(params) do
       conn
       |> put_status(:ok)

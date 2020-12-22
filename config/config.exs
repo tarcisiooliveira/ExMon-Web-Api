@@ -31,5 +31,9 @@ config :phoenix, :json_library, Jason
 import_config "#{Mix.env()}.exs"
 
 config :ex_mon, ExMonWeb.Auth.Guardian,
-       issuer: "my_app",
-       secret_key: "orLB012V51zjbU0TJHdaMLPicpZXR4Wnad7SnilQuGOgR0PWvAtxOhOySBO01AuQ"
+  issuer: "my_app",
+  secret_key: "orLB012V51zjbU0TJHdaMLPicpZXR4Wnad7SnilQuGOgR0PWvAtxOhOySBO01AuQ"
+
+config :ex_mon, ExMonWeb.Auth.Pipeline,
+  module: ExMonWeb.Auth.Guardian,
+  error_handler: ExMonWeb.Auth.ErrorHandler #Retorna erros amigáveis (erros de autenticação)
