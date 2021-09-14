@@ -1,6 +1,7 @@
 defmodule ExMon do
   alias ExMon.{Pokemon, Trainer}
   alias ExMon.Trainer.Pokemon, as: TrainerPokemon
+
   @moduledoc """
   ExMon keeps the contexts that define your domain
   and business logic.

@@ -13,7 +13,6 @@ defmodule ExMonWeb.Controllers.TrainersControllerTest do
       {:ok, %{conn: conn}}
     end
 
-
     test "when there is a trainer with the given id, returns the trainer", %{conn: conn} do
       params = %{name: "Tarcisio", password: "3456789"}
       {:ok, %Trainer{id: id}} = ExMon.create_trainer(params)

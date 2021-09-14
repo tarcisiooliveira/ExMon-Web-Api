@@ -13,7 +13,7 @@ defmodule ExMon.DataCase do
   by setting `use ExMon.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
-
+ alias Ecto.Adapters.SQL.Sandbox
   use ExUnit.CaseTemplate
 
   using do
@@ -28,10 +28,10 @@ defmodule ExMon.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ExMon.Repo)
+    :ok = Sandbox.checkout(ExMon.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ExMon.Repo, {:shared, self()})
+      Sandbox.mode(ExMon.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,8 +1,11 @@
 defmodule ExMon.Trainer.Pokemon.Create do
-  alias ExMon.Pokemon
-  alias ExMon.Trainer.Pokemon, as: TrainerPokemon
+  @moduledoc """
+  Module Doc Name
+  """
   alias ExMon.PokeApi.Client
+  alias ExMon.Pokemon
   alias ExMon.Repo
+  alias ExMon.Trainer.Pokemon, as: TrainerPokemon
 
   def call(%{"name" => name} = params) do
     name

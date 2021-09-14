@@ -36,4 +36,5 @@ config :ex_mon, ExMonWeb.Auth.Guardian,
 
 config :ex_mon, ExMonWeb.Auth.Pipeline,
   module: ExMonWeb.Auth.Guardian,
-  error_handler: ExMonWeb.Auth.ErrorHandler #Retorna erros amigáveis (erros de autenticação)
+  # Retorna erros amigáveis (erros de autenticação)
+  error_handler: ExMonWeb.Auth.ErrorHandler

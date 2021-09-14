@@ -1,4 +1,7 @@
 defmodule ExMon.Pokemon.Get do
+  @moduledoc """
+  Module Doc Name
+  """
   alias ExMon.PokeApi.Client
   alias ExMon.Pokemon
 

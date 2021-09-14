@@ -1,4 +1,7 @@
 defmodule ExMonWeb.Auth.ErrorHandler do
+  @moduledoc """
+  Module Doc Name
+  """
   import Plug.Conn
   @behaviour Guardian.Plug.ErrorHandler
 

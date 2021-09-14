@@ -1,4 +1,7 @@
 defmodule ExMon.Trainer.Pokemon do
+  @moduledoc """
+  Module Doc Name
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -30,7 +33,6 @@ defmodule ExMon.Trainer.Pokemon do
     |> validate_required(@required)
     |> assoc_constraint(:trainer)
     |> validate_length(:nickname, min: 2)
-
   end
 
   def update_changeset(pokemon, params) do

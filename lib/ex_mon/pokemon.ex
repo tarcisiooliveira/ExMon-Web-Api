@@ -22,6 +22,7 @@ defmodule ExMon.Pokemon do
     }
   end
 
-  # aqui o item["type"]["name"]é por conta de haver uma outra estrutura com o "Type" dentro do "types" e um "name" dentro dentro do "type"
+  # aqui o item["type"]["name"]é por conta de haver uma outra
+  # estrutura com o "Type" dentro do "types" e um "name" dentro dentro do "type"
   defp parse_type(types), do: Enum.map(types, fn item -> item["type"]["name"] end)
 end

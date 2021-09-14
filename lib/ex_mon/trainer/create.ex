@@ -1,4 +1,7 @@
 defmodule ExMon.Trainer.Create do
+  @moduledoc """
+  Module Doc Name
+  """
   alias ExMon.{Repo, Trainer}
 
   def call(params) do

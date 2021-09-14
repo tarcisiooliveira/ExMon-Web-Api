@@ -1,4 +1,7 @@
 defmodule ExMon.Trainer do
+  @moduledoc """
+  Module Doc Name
+  """
   use Ecto.Schema
   import Ecto.Changeset
   alias ExMon.Trainer.Pokemon

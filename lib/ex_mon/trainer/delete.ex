@@ -1,4 +1,7 @@
 defmodule ExMon.Trainer.Delete do
+  @moduledoc """
+  Module Doc Name
+  """
   alias Ecto.UUID
   alias ExMon.{Repo, Trainer}
 

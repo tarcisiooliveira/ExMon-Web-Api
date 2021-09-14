@@ -16,6 +16,7 @@ defmodule ExMonWeb.ConnCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -32,10 +33,10 @@ defmodule ExMonWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ExMon.Repo)
+    :ok = Sandbox.checkout(ExMon.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ExMon.Repo, {:shared, self()})
+      Sandbox.mode(ExMon.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

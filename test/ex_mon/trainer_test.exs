@@ -15,8 +15,7 @@ defmodule ExMon.TrainerTest do
                errors: [],
                data: %ExMon.Trainer{},
                valid?: true
-             } =
-               response
+             } = response
     end
 
     test "when there are invalid params, return a invalid changeset" do
@@ -29,8 +28,7 @@ defmodule ExMon.TrainerTest do
                },
                data: %ExMon.Trainer{},
                valid?: false
-             } =
-               response
+             } = response
 
       assert errors_on(response) == %{name: ["can't be blank"]}
     end

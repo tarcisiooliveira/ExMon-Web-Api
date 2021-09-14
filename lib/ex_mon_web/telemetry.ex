@@ -1,4 +1,7 @@
 defmodule ExMonWeb.Telemetry do
+  @moduledoc """
+  Module Doc Name
+  """
   use Supervisor
   import Telemetry.Metrics
 

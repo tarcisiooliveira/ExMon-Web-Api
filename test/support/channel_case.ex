@@ -14,7 +14,7 @@ defmodule ExMonWeb.ChannelCase do
   by setting `use ExMonWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
-
+  alias Ecto.Adapters.SQL.Sandbox
   use ExUnit.CaseTemplate
 
   using do
@@ -29,10 +29,10 @@ defmodule ExMonWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ExMon.Repo)
+    :ok = Sandbox.checkout(ExMon.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ExMon.Repo, {:shared, self()})
+      Sandbox.mode(ExMon.Repo, {:shared, self()})
     end
 
     :ok
